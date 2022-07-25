@@ -1,5 +1,5 @@
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
+const { MongoClient } = require('mongodb');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -15,10 +15,10 @@ const connectionOptions = {
 
 let db = null;
 
-const getConnection = async () => {
+const getDBConnection = async () => {
   try {
     if (!db) {
-      db = await MongoClient.connect(DB_URL, connectionOptions).db(DB_NAME);
+      db = (await MongoClient.connect(DB_URL, connectionOptions)).db(DB_NAME);
     }
     
     return db;
@@ -28,4 +28,4 @@ const getConnection = async () => {
   }
 };
 
-export default getConnection;
+module.exports = getDBConnection;
