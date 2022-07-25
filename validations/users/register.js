@@ -9,7 +9,7 @@ const registerSchema = joi.object({
     .email()
     .required(),
   password: joi.string()
-    .pattern(new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%&*])[a-zA-Z\d!#$%&*]{8,12}'))
+    .regex(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%&*])[a-zA-Z\d!#$%&*]{8,12}/)
     .required(),
 });
 
