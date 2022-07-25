@@ -1,0 +1,16 @@
+{
+  "name": "games-library-backend",
+  "version": "1.0.0",
+  "description": "Back end para alimentar uma biblioteca de jogos pessoal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josimar Souza",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.8.0"
+  }
+}
