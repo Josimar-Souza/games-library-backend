@@ -20,6 +20,4 @@ const registerUser = async (newUser) => {
   }
 };
 
-registerUser({username: 'Josimar', password: 'Josimar9!', email: 'contact.josimarsouza@gmail.com'});
-
 module.exports = registerUser;
