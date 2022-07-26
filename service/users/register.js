@@ -16,7 +16,7 @@ const registerUser = async (newUser) => {
 
     return registeredUser;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
