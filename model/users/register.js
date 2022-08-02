@@ -11,7 +11,7 @@ const {
 const registerUser = async (newUser) => {
   try {
     const db = await getDBConnection();
-    
+
     const { insertedId: id } = await db.collection(DB_USERS_COLLECTION).insertOne(newUser);
     
     const { password, ...userWithoutPassword } = newUser;
@@ -20,7 +20,6 @@ const registerUser = async (newUser) => {
       ...userWithoutPassword,
       _id: ObjectId(id),
     }
-    
     return user;
   } catch (error) {
     console.log(error);

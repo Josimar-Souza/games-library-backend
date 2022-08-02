@@ -3,7 +3,7 @@ const registerUser = require('./register');
 
 const userRouter = express.Router({ mergeParams: true });
 
-userRouter.post('/register', registerUser);
+userRouter.post('/', registerUser);
 
 module.exports = (rootRouter) => {
   rootRouter.use('/user', userRouter);
