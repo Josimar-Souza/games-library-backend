@@ -1,16 +1,6 @@
 const joi = require('joi');
 
-const registerSchema = joi.object({
-  username: joi.string()
-    .min(5)
-    .max(25)
-    .required()
-    .messages({
-      'string.base': '"username" must be a string',
-      'string.empty': '"username" must not be empty',
-      'string.min': '"username" must no be less than 5 characters',
-      'string.max': '"username" must not be more than 25 characters',
-    }),
+const loginSchema = joi.object({
   email: joi.string()
     .email()
     .required()
@@ -28,4 +18,4 @@ const registerSchema = joi.object({
     }),
 });
 
-module.exports = (value) => registerSchema.validate(value);
+module.exports = (value) => loginSchema.validate(value);
