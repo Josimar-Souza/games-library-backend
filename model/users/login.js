@@ -11,9 +11,9 @@ const login = async (user) => {
   try {
     const db = await getDBConnection();
 
-    const userFounded = await db.collection(DB_USERS_COLLECTION).find({ email: user.email });
+    const userFounded = await db.collection(DB_USERS_COLLECTION).find({ email: user.email }).toArray();
 
-    return userFounded;
+    return userFounded[0];
   } catch (error) {
     console.log(error);
   }

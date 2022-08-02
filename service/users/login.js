@@ -29,16 +29,16 @@ const getToken = (user) => {
 const login = async (user) => {
   try {
     const validationResult = userValidations.login(user);
-    
+
     if ('error' in validationResult) {
       const error = new ErrorCreator(validationResult.error.message, StatusCodes.BAD_REQUEST);
       return error;
     }
     
     const userFounded = await userModels.login(user);
-    
+
     if (!userFounded.email) {
-      const error = new ErrorCreator('User not founded', StatusCodes.BAD_REQUEST);
+      const error = new ErrorCreator('User not found', StatusCodes.BAD_REQUEST);
       return error;
     }
     
@@ -46,7 +46,7 @@ const login = async (user) => {
     
     return token;
   } catch (error) {
-  
+    console.log(error);
   }
 };
 
