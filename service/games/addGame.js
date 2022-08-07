@@ -13,7 +13,7 @@ const addGame = async (newGame) => {
     }
 
     const gameAdded = await gamesModel.addGame(newGame);
-    
+
     return gameAdded;
   } catch (error) {
     console.log(error);
