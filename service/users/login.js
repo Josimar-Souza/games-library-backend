@@ -42,6 +42,11 @@ const login = async (user) => {
       return error;
     }
     
+    if (userFounded.password !== user.password) {
+      const error = new ErrorCreator('Invalid email or password', StatusCodes.BAD_REQUEST);
+      return error;
+    }
+    
     const token = getToken(userFounded);
     
     return token;
