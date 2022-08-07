@@ -1,0 +1,19 @@
+const { StatusCodes } = require('http-status-codes');
+const ErrorCreator = require('../../helpers/errorCreator');
+const gamesService = require('../../service/games');
+
+const addGame = async (req, res, next) => {
+  try {
+    const gameAdded = await gamesService.addGame(req.body);
+    
+    if (gameAdded instanceof ErrorCreator) {
+      return res.status(gameAdded.status).send({ message: gameAdded.message });
+    }
+    
+    return res.status(StatusCodes.CREATED).send({ newGame: gameAdded });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = addGame;

@@ -1,7 +1,7 @@
 const addGame = require('./addGame');
 
-const gamesValidations = {
+const gamesService = {
   addGame,
 };
 
-module.exports = gamesValidations;
+module.exports = gamesService;
