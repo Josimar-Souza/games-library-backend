@@ -3,7 +3,7 @@ const ErrorCreator = require('../../helpers/errorCreator');
 const gamesModel = require('../../model/games');
 const gamesValidations = require('../../validations/games');
 
-const addGame = async (newGame) => {
+const addGame = async (newGame, user) => {
   try {
     const validationResult = gamesValidations.addGame(newGame);
 
@@ -12,7 +12,12 @@ const addGame = async (newGame) => {
       return error;
     }
 
-    const gameAdded = await gamesModel.addGame(newGame);
+    const gameToAdd = {
+      ...newGame,
+      user: user.email,
+    };
+
+    const gameAdded = await gamesModel.addGame(gameToAdd);
 
     return gameAdded;
   } catch (error) {

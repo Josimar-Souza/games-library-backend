@@ -4,7 +4,7 @@ const gamesService = require('../../service/games');
 
 const addGame = async (req, res, next) => {
   try {
-    const gameAdded = await gamesService.addGame(req.body);
+    const gameAdded = await gamesService.addGame(req.body, req.user);
 
     if (gameAdded instanceof ErrorCreator) {
       return res.status(gameAdded.status).send({ message: gameAdded.message });
