@@ -4,7 +4,6 @@ const usersValidations = require('../../validations/users');
 const ErrorCreator = require('../../helpers/errorCreator');
 
 const registerUser = async (newUser) => {
-  try {
     const validationResult = usersValidations.register(newUser);
 
     if ('error' in validationResult) {
@@ -12,12 +11,16 @@ const registerUser = async (newUser) => {
       return error;
     }
 
+    const user = await userModels.findByEmail(newUser.email);
+
+    if (user) {
+      const error = new ErrorCreator('User already registered', StatusCodes.BAD_REQUEST);
+      return error;
+    }
+
     const registeredUser = await userModels.registerUser(newUser);
 
     return registeredUser;
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 module.exports = registerUser;

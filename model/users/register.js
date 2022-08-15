@@ -9,21 +9,18 @@ const {
 } = process.env;
 
 const registerUser = async (newUser) => {
-  try {
-    const db = await getDBConnection();
+  const db = await getDBConnection();
 
-    const { insertedId: id } = await db.collection(DB_USERS_COLLECTION).insertOne(newUser);
-    
-    const { password, ...userWithoutPassword } = newUser;
+  const { insertedId: id } = await db.collection(DB_USERS_COLLECTION).insertOne(newUser);
 
-    const user = {
-      ...userWithoutPassword,
-      _id: ObjectId(id),
-    }
-    return user;
-  } catch (error) {
-    console.log(error);
+  const { password, ...userWithoutPassword } = newUser;
+
+  const user = {
+    ...userWithoutPassword,
+    _id: ObjectId(id),
   }
+
+  return user;
 };
 
 module.exports = registerUser;

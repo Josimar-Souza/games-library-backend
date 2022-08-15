@@ -4,14 +4,10 @@ const ErrorCreator = require('../../helpers/errorCreator');
 
 const registerUser = async (req, res, next) => {
   try {
-    const registeredUser = await usersServices.registerUser(req.body, next);
+    const registeredUser = await usersServices.registerUser(req.body);
 
     if (registeredUser instanceof ErrorCreator) {
       return res.status(registeredUser.status).send({ message: registeredUser.message })
-    }
-
-    if (!registeredUser) {
-      throw new Error();
     }
 
     return res.status(StatusCodes.CREATED).send({ newUser: registeredUser });
