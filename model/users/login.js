@@ -8,15 +8,11 @@ const {
 } = process.env;
 
 const login = async (user) => {
-  try {
-    const db = await getDBConnection();
+  const db = await getDBConnection();
 
-    const userFounded = await db.collection(DB_USERS_COLLECTION).find({ email: user.email }).toArray();
+  const userFounded = await db.collection(DB_USERS_COLLECTION).find({ email: user.email }).toArray();
 
-    return userFounded[0];
-  } catch (error) {
-    console.log(error);
-  }
+  return userFounded[0];
 };
 
 module.exports = login;

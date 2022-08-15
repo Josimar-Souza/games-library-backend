@@ -27,32 +27,28 @@ const getToken = (user) => {
 }
 
 const login = async (user) => {
-  try {
-    const validationResult = userValidations.login(user);
+  const validationResult = userValidations.login(user);
 
-    if ('error' in validationResult) {
-      const error = new ErrorCreator(validationResult.error.message, StatusCodes.BAD_REQUEST);
-      return error;
-    }
-    
-    const userFounded = await userModels.login(user);
-
-    if (!userFounded.email) {
-      const error = new ErrorCreator('User not found', StatusCodes.BAD_REQUEST);
-      return error;
-    }
-    
-    if (userFounded.password !== user.password) {
-      const error = new ErrorCreator('Invalid email or password', StatusCodes.BAD_REQUEST);
-      return error;
-    }
-    
-    const token = getToken(userFounded);
-    
-    return token;
-  } catch (error) {
-    console.log(error);
+  if ('error' in validationResult) {
+    const error = new ErrorCreator(validationResult.error.message, StatusCodes.BAD_REQUEST);
+    return error;
   }
+
+  const userFounded = await userModels.login(user);
+
+  if (!userFounded.email) {
+    const error = new ErrorCreator('User not found', StatusCodes.BAD_REQUEST);
+    return error;
+  }
+
+  if (userFounded.password !== user.password) {
+    const error = new ErrorCreator('Invalid email or password', StatusCodes.BAD_REQUEST);
+    return error;
+  }
+
+  const token = getToken(userFounded);
+
+  return token;
 };
 
 module.exports = login;

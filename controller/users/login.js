@@ -10,10 +10,6 @@ const login = async (req, res, next) => {
       return res.status(token.status).send({ message: token.message });
     }
 
-    if (!token) {
-      throw new Error();
-    }
-    
     return res.status(StatusCodes.OK).send({ token });
   } catch (error) {
     next(error);
