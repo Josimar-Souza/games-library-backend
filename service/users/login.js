@@ -36,7 +36,7 @@ const login = async (user) => {
 
   const userFounded = await userModels.login(user);
 
-  if (!userFounded.email) {
+  if (!userFounded) {
     const error = new ErrorCreator('User not found', StatusCodes.BAD_REQUEST);
     return error;
   }
