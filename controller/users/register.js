@@ -10,10 +10,6 @@ const registerUser = async (req, res, next) => {
       return res.status(registeredUser.status).send({ message: registeredUser.message })
     }
 
-    if (!registeredUser) {
-      throw new Error();
-    }
-
     return res.status(StatusCodes.CREATED).send({ newUser: registeredUser });
   } catch (error) {
     next(error)

@@ -4,7 +4,6 @@ const usersValidations = require('../../validations/users');
 const ErrorCreator = require('../../helpers/errorCreator');
 
 const registerUser = async (newUser) => {
-  try {
     const validationResult = usersValidations.register(newUser);
 
     if ('error' in validationResult) {
@@ -15,9 +14,6 @@ const registerUser = async (newUser) => {
     const registeredUser = await userModels.registerUser(newUser);
 
     return registeredUser;
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 module.exports = registerUser;
