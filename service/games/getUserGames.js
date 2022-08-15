@@ -4,9 +4,9 @@ const usersModels = require('../../model/users');
 const ErrorCreator = require('../../helpers/errorCreator');
 
 const getUserGames = async (user) => {
-  const user = await usersModels.findByEmail(user.email);
+  const userFounded = await usersModels.findByEmail(user.email);
   
-  if (!user) {
+  if (!userFounded) {
     const error = new ErrorCreator('User not registered!', StatusCodes.BAD_REQUEST);
     return error;
   }

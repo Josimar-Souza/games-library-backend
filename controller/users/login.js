@@ -5,7 +5,7 @@ const userServices = require('../../service/users');
 const login = async (req, res, next) => {
   try {
     const token = await userServices.login(req.body);
-    console.log(token);
+
     if (token instanceof ErrorCreator) {
       return res.status(token.status).send({ message: token.message });
     }
