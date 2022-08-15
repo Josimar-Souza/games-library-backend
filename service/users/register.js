@@ -11,6 +11,13 @@ const registerUser = async (newUser) => {
       return error;
     }
 
+    const user = await userModels.findByEmail(newUser.email);
+
+    if (user) {
+      const error = new ErrorCreator('User already registered', StatusCodes.BAD_REQUEST);
+      return error;
+    }
+
     const registeredUser = await userModels.registerUser(newUser);
 
     return registeredUser;
