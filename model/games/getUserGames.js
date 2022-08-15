@@ -7,8 +7,8 @@ const { DB_GAMES_COLLECTION } = process.env;
 const getUserGames = async (user) => {
   const db = await getDBConnection();
   
-  const games = db.collection(DB_GAMES_COLLECTION).find({ email: user.email }).toArray();
-  
+  const games = await db.collection(DB_GAMES_COLLECTION).find({ user: user.email }).toArray();
+  console.log(games);
   return games;
 };
 
