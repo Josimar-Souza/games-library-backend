@@ -10,10 +10,6 @@ const addGame = async (req, res, next) => {
       return res.status(gameAdded.status).send({ message: gameAdded.message });
     }
 
-    if (!gameAdded) {
-      throw new Error();
-    }
-
     return res.status(StatusCodes.CREATED).send({ newGame: gameAdded });
   } catch (error) {
     next(error);
