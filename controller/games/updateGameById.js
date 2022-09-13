@@ -17,3 +17,5 @@ const updateGameById = async (req, res, next) => {
     next(error);
   }
 }
+
+module.exports = updateGameById;
