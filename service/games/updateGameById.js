@@ -7,7 +7,7 @@ const updateGameById = async (id, newValue) => {
   const validationResult = gamesValidations.updateGame(newValue);
 
   if ('error' in validationResult) {
-    const error = new ErrorCreator(validationResult.error.message, StatusCodes);
+    const error = new ErrorCreator(validationResult.error.message, StatusCodes.BAD_REQUEST);
     return error;
   }
 

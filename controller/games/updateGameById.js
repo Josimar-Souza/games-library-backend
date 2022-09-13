@@ -9,6 +9,7 @@ const updateGameById = async (req, res, next) => {
     const updatedGame = await gamesService.updateGameById(id, req.body);
 
     if (updatedGame instanceof ErrorCreator) {
+      console.log(updatedGame.status);
       return res.status(updatedGame.status).json({ message: updatedGame.message });
     }
 
