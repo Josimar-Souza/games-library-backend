@@ -23,11 +23,12 @@ const addGameSchema = joi.object({
     .required()
     .items(joi.string().min(5)),
   trailerURL: joi.string()
+    .required()
     .uri(),
-  metacritic: {
-    metascore: joi.number(),
-    userscore: joi.number(),
-  },
+  metacritic: joi.object({
+    metascore: joi.number().required(),
+    userscore: joi.number().required(),
+  }).required()
 });
 
 module.exports = (value) => addGameSchema.validate(value);
