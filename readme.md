@@ -22,6 +22,7 @@
 <h1>Endpoints</h1>
 <h2>POST: /user/register</h2>
 <p>Exemplo de body:</p>
+<hr />
 <pre>
   {
     "username": | string, min = 5, max = 25, necessário |
@@ -30,34 +31,40 @@
   }
 </pre>
 <p>Exemplos de respostas:</p>
+<hr />
 <p>Status: 500 Internal Server Error</p>
 <pre>
   {
     "message": "Internal server error"
   }
 </pre>
+<hr />
 <p>Status: 400 Bad Request</p>
 <pre>
   {
-    "message": "\"field\" is required or an invalid field error message"
+    "message": "\"field\" is required" ou mensagem de campo inválido
   }
 </pre>
+<hr />
 <p>Status: 400 Bad Request</p>
 <pre>
   {
     "message": "User already registered"
   }
 </pre>
+<hr />
 <p>Status: 201 Created</p>
 <pre>
   {
     "newUser": {
-      "username": | nome de usuário |,
-      "email": | email do usuário |,
-      "_id": | id do usuário |
+      "username": "Nome de usuário",
+      "email": "Email do usuário",
+      "_id": "Id do usuário
     }
   }
 </pre>
+
+<hr />
 
 <h2>POST: /user/login</h2>
 <p>Exemplo de body</p>
@@ -68,27 +75,113 @@
   }
 </pre>
 <p>Exemplos de respostas</p>
+<hr />
 <p>Status: 500 Internal Server Error</p>
 <pre>
   {
     "message": "Internal server error"
   }
 </pre>
+<hr />
 <p>Status: 400 Bad Request</p>
 <pre>
   {
-    "message": "\"field\" is required or an invalid field error message"
+    "message": "\"field\" is required" ou mensagem de campo inválido
   }
 </pre>
+<hr />
 <p>Status: 400 Bad Request</p>
 <pre>
   {
     "message": "Invalid email or password"
   }
 </pre>
+<hr />
 <p>Status: 200 ok</p>
 <pre>
   {
     "token": | token de acesso |
+  }
+</pre>
+
+<hr />
+
+<h2>POST: /games</h2>
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<hr />
+<p>Exemplo de body</p>
+<pre>
+  {
+    "title": | string, min = 3, max = 35, necessário |,
+    "releaseYear": | string, no formato dd/mm/aaaa, necessário |,
+    "sinopse": | string, min = 10, max = 100, necessário |,
+    "developer": | string, min = 5, necessário |,
+    "publisher": | string, min = 5, necessário |,
+    "platforms": [
+      | string, min = 5, necessário |
+    ]
+    "trailerURL": | url válida, necessário|,
+    "metacritic": {
+      "metascore": | number, necessário |,
+      "userscore": | number, necessário |
+    }
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 400 Bad Request</p>
+<pre>
+  {
+    "message": "\"field\" is required" ou mensagem de campo inválido
+  }
+</pre>
+<hr />
+<p>Status: 201 Created</p>
+<pre>
+  {
+    "newGames": {
+      "title": "Nome do game",
+      "releaseYear": "Data de lançamento do game",
+      "sinopse": "Sinopse do game",
+      "developer": "Desenvolvedora do game",
+      "publisher": "Publicadora do game",
+      "platforms": [
+        "Plataformas para qual o game foi lançado",
+      ],
+      "trailerURL": "Url para acessar o trailer do game",
+      "metacritc" {
+        "metascore": "Nota do game pelos criticos do metacritic",
+        "userscore": "Nota do game pelos usuários do metacritic",
+      },
+      "user": "Usuário que cadastrou o game",
+      "_id": "Id do game"
+    }
   }
 </pre>
