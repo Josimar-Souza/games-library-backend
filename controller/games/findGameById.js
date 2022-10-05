@@ -5,8 +5,8 @@ const gamesService = require('../../service/games');
 const findGameById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { email } = req.user;
-    const game = await gamesService.findGameById(id, email);
+    const { userEmail } = req.user;
+    const game = await gamesService.findGameById(id, userEmail);
 
     if (game instanceof ErrorCreator) {
       return res.status(game.status).json({ message: game.message });
