@@ -225,4 +225,104 @@
     "games": | lista de jogos, (array) |
   }
 </pre>
+
 <hr />
+
+<h2>DEL: /games/:id</h2>
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 404 Not Found</p>
+<pre>
+  {
+    "message": "Game not found!"
+  }
+</pre>
+<hr />
+<p>Status: 200 Ok</p>
+<pre>
+  {
+    "message": "Game successfully deleted!"
+  }
+</pre>
+
+<hr />
+
+<h2>POST: /games/:id</h2>
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 400 Bad Request</p>
+<pre>
+  {
+    "message": | mensagem de campo inválido |
+  }
+</pre>
+<hr />
+<p>Status: 404 Not Found</p>
+<pre>
+  {
+    "message": "Game not found!"
+  }
+</pre>
+<hr />
+<p>Status: 200 Ok</p>
+<pre>
+  {
+    "message": "Game successfully updated!"
+  }
+</pre>
