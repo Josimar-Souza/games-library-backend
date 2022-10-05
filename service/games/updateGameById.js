@@ -11,7 +11,7 @@ const updateGameById = async (id, newValue) => {
     return error;
   }
 
-  const game = gamesModel.findGameById(id)
+  const game = await gamesModel.findGameById(id)
 
   if (!game) {
     const error = new ErrorCreator('Game not found!', StatusCodes.NOT_FOUND);
