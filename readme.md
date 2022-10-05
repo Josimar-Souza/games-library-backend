@@ -338,3 +338,9 @@
     "message": "Game successfully updated!"
   }
 </pre>
+
+<hr />
+
+<h2>Contatos</h2>
+<p>Email: contact.josimarsouza@gmail.com</p>
+<p>linkedin: <a href="https://www.linkedin.com/in/josimar-souza-brito/" target="_blank">Josimar Souza</a></p>
