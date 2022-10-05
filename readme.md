@@ -21,6 +21,8 @@
 
 <h1>Endpoints</h1>
 <h2>POST: /user/register</h2>
+<h3>Registra um novo usuário!</h3>
+<hr />
 <p>Exemplo de body:</p>
 <hr />
 <pre>
@@ -67,6 +69,8 @@
 <hr />
 
 <h2>POST: /user/login</h2>
+<h3>Loga em uma conta cadastrada (consegue o token de acesso)</h3>
+<hr />
 <p>Exemplo de body</p>
 <pre>
   {
@@ -107,6 +111,8 @@
 <hr />
 
 <h2>POST: /games</h2>
+<h3>Cadastra um novo game</h3>
+<hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
 <p>Exemplo:</p>
 <pre>
@@ -189,6 +195,8 @@
 <hr />
 
 <h2>GET: /games</h2>
+<h3>Lista todos os games cadastrados</h3>
+<hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
 <p>Exemplo:</p>
 <pre>
@@ -229,6 +237,8 @@
 <hr />
 
 <h2>DEL: /games/:id</h2>
+<h3>Deleta um game pelo seu id</h3>
+<hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
 <p>Exemplo:</p>
 <pre>
@@ -276,6 +286,8 @@
 <hr />
 
 <h2>POST: /games/:id</h2>
+<h3>Atualiza um game pelo seu id</h3>
+<hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
 <p>Exemplo:</p>
 <pre>
