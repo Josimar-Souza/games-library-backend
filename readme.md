@@ -185,3 +185,44 @@
     }
   }
 </pre>
+
+<hr />
+
+<h2>GET: /games</h2>
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 200 Ok</p>
+<pre>
+  {
+    "games": | lista de jogos, (array) |
+  }
+</pre>
+<hr />
