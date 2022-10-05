@@ -24,13 +24,13 @@
 <p>Exemplo de body:</p>
 <pre>
   {
-    "name": | string, min = 5, max = 25, necessário |
+    "username": | string, min = 5, max = 25, necessário |
     "email": | email valido, necessário |
     "password": | Uma letra maiúscula, uma minúscula, um número, e um caracter especial, min = 8, max = 12 |
   }
 </pre>
 <p>Exemplos de respostas:</p>
-<p>Status: 500 internal Server Error</p>
+<p>Status: 500 Internal Server Error</p>
 <pre>
   {
     "message": "Internal server error"
@@ -46,5 +46,49 @@
 <pre>
   {
     "message": "User already registered"
+  }
+</pre>
+<p>Status: 201 Created</p>
+<pre>
+  {
+    "newUser": {
+      "username": | nome de usuário |,
+      "email": | email do usuário |,
+      "_id": | id do usuário |
+    }
+  }
+</pre>
+
+<h2>POST: /user/login</h2>
+<p>Exemplo de body</p>
+<pre>
+  {
+    "email": | email valido, necessário |
+    "password": | Uma letra maiúscula, uma minúscula, um número, e um caracter especial, min = 8, max = 12 |
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<p>Status: 400 Bad Request</p>
+<pre>
+  {
+    "message": "\"field\" is required or an invalid field error message"
+  }
+</pre>
+<p>Status: 400 Bad Request</p>
+<pre>
+  {
+    "message": "Invalid email or password"
+  }
+</pre>
+<p>Status: 200 ok</p>
+<pre>
+  {
+    "token": | token de acesso |
   }
 </pre>
