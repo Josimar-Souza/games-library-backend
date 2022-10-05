@@ -1,9 +1,28 @@
 <h1>Bem vindos ao projeto Games Library API</h1>
 
-<h1>Objetivo</h1>
+<h1>Sumário</h1>
+<ul>
+  <li><a href="#objective">Objetivo</a></li>
+  <li><a href="#development">Desenvolvimento</a></li>
+  <li><a href="#deploy">Deploy</a></li>
+  <li>
+    <a href="#endpoints">Endpoints</a>
+    <ul>
+      <li><a href="#register">POST: /user/register</a></li>
+      <li><a href="#login">POST: /user/login</a></li>
+      <li><a href="#add-games">POST: /games</a></li>
+      <li><a href="#get-games">GET: /games</a></li>
+      <li><a href="#del-game">DEL: /games/:id</a></li>
+      <li><a href="#update-game">POST: /games/:id</a></li>
+    </ul>
+  </li>
+  <li><a href="#contacts">Contatos</a></li>
+</ul>
+
+<h1 id="objective">Objetivo</h1>
 <p>Esse projeto consiste em uma api para armazenar e buscar dados sobre jogos cadastrados por usuários em um banco de dados (MongoDB).</p>
 
-<h1>Desenvolvimento</h1>
+<h1 id="development">Desenvolvimento</h1>
 <p>Para desenvolver esse projeto utilizei as seguintes tecnologias:</p>
 <ul>
   <li>Express</li>
@@ -15,12 +34,12 @@
   <li>Nodemon</li>
 </ul>
 
-<h1>Deploy</h1>
+<h1 id="deploy">Deploy</h1>
 <p>Essa api foi publicada no <a href="https://render.com/" target="_blank">Render</a>, um serviço de hospedagem de sites e serviços na nuvem, você poderá acessar a api no link a seguir:</p>
 <a>https://games-library-api.onrender.com/games</a>
 
-<h1>Endpoints</h1>
-<h2>POST: /user/register</h2>
+<h1 id="endpoints">Endpoints</h1>
+<h2 id="register">POST: /user/register</h2>
 <h3>Registra um novo usuário!</h3>
 <hr />
 <p>Exemplo de body:</p>
@@ -68,7 +87,7 @@
 
 <hr />
 
-<h2>POST: /user/login</h2>
+<h2 id="login">POST: /user/login</h2>
 <h3>Loga em uma conta cadastrada (consegue o token de acesso)</h3>
 <hr />
 <p>Exemplo de body</p>
@@ -110,7 +129,7 @@
 
 <hr />
 
-<h2>POST: /games</h2>
+<h2 id="add-games">POST: /games</h2>
 <h3>Cadastra um novo game</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
@@ -194,7 +213,7 @@
 
 <hr />
 
-<h2>GET: /games</h2>
+<h2 id="get-games">GET: /games</h2>
 <h3>Lista todos os games cadastrados</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
@@ -236,7 +255,7 @@
 
 <hr />
 
-<h2>DEL: /games/:id</h2>
+<h2 id="del-game">DEL: /games/:id</h2>
 <h3>Deleta um game pelo seu id</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
@@ -285,7 +304,7 @@
 
 <hr />
 
-<h2>POST: /games/:id</h2>
+<h2 id="update-game">POST: /games/:id</h2>
 <h3>Atualiza um game pelo seu id</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
@@ -339,8 +358,6 @@
   }
 </pre>
 
-<hr />
-
-<h2>Contatos</h2>
+<h1 id="contacts">Contatos</h1>
 <p>Email: contact.josimarsouza@gmail.com</p>
 <p>linkedin: <a href="https://www.linkedin.com/in/josimar-souza-brito/" target="_blank">Josimar Souza</a></p>
