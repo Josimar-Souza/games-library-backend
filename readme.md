@@ -8,12 +8,13 @@
   <li>
     <a href="#endpoints">Endpoints</a>
     <ul>
-      <li><a href="#register">POST: /user/register</a></li>
-      <li><a href="#login">POST: /user/login</a></li>
-      <li><a href="#add-games">POST: /games</a></li>
-      <li><a href="#get-games">GET: /games</a></li>
-      <li><a href="#del-game">DEL: /games/:id</a></li>
-      <li><a href="#update-game">POST: /games/:id</a></li>
+      <li><a href="#register">Registrar</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#add-games">Adicionar novo jogo</a></li>
+      <li><a href="#get-games">Listar todos os jogos</a></li>
+      <li><a href="#del-game">Deletar um jogo</a></li>
+      <li><a href="#update-game">Atualizar um jogo</a></li>
+      <li><a href="#game-by-id">Listar jogo específico</a></li>
     </ul>
   </li>
   <li><a href="#contacts">Contatos</a></li>
@@ -360,7 +361,7 @@
 
 <hr />
 
-<h2>GET: /games/:id</h2>
+<h2 id="game-by-id">GET: /games/:id</h2>
 <h3>Lista um game pelo seu id</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
