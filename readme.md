@@ -191,7 +191,7 @@
 <p>Status: 201 Created</p>
 <pre>
   {
-    "newGames": {
+    "newGame": {
       "title": "Nome do game",
       "releaseYear": "Data de lançamento do game",
       "sinopse": "Sinopse do game",
@@ -355,6 +355,78 @@
 <pre>
   {
     "message": "Game successfully updated!"
+  }
+</pre>
+
+<hr />
+
+<h2>GET: /games/:id</h2>
+<h3>Lista um game pelo seu id</h3>
+<hr />
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "You can only list games that you registered!"
+  }
+</pre>
+<hr />
+<p>Status: 404 Not Found</p>
+<pre>
+  {
+    "message": "Game not found!"
+  }
+</pre>
+<hr />
+<p>Status: 200 Ok</p>
+<pre>
+  {
+    "game": {
+      "title": "Nome do game",
+      "releaseYear": "Data de lançamento do game",
+      "sinopse": "Sinopse do game",
+      "developer": "Desenvolvedora do game",
+      "publisher": "Publicadora do game",
+      "platforms": [
+        "Plataformas para qual o game foi lançado",
+      ],
+      "trailerURL": "Url para acessar o trailer do game",
+      "metacritc" {
+        "metascore": "Nota do game pelos criticos do metacritic",
+        "userscore": "Nota do game pelos usuários do metacritic",
+      },
+      "user": "Usuário que cadastrou o game",
+      "_id": "Id do game"
+    }
   }
 </pre>
 
