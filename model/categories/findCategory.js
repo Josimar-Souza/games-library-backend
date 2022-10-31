@@ -7,9 +7,9 @@ const { DB_CATEGORIES_COLLECTION } = process.env;
 const findCategory = async (category) => {
   const db = await getDBConnection();
 
-  const categoryFounded = await db.collection(DB_CATEGORIES_COLLECTION).findOne({ category }).toArray();
+  const categoryFounded = await db.collection(DB_CATEGORIES_COLLECTION).findOne({ category });
 
-  return categoryFounded[0];
+  return categoryFounded;
 };
 
 module.exports = findCategory;
