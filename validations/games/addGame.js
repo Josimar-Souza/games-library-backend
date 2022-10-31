@@ -28,7 +28,17 @@ const addGameSchema = joi.object({
   metacritic: joi.object({
     metascore: joi.number().required(),
     userscore: joi.number().required(),
-  }).required()
+  }).required(),
+  image: joi.string()
+    .required()
+    .uri(),
+  backdrop: joi.string()
+    .required()
+    .uri(),
+  category: joi.string()
+    .required()
+    .min(3)
+    .max(20),
 });
 
 module.exports = (value) => addGameSchema.validate(value);
