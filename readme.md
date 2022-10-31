@@ -10,6 +10,7 @@
     <ul>
       <li><a href="#register">Registrar</a></li>
       <li><a href="#login">Login</a></li>
+      <li><a href="#add-category">Adicionar nova categoria</a></li>
       <li><a href="#add-games">Adicionar novo jogo</a></li>
       <li><a href="#get-games">Listar todos os jogos</a></li>
       <li><a href="#del-game">Deletar um jogo</a></li>
@@ -130,6 +131,67 @@
 
 <hr />
 
+<h2 id="add-category">POST: /category</h2>
+<h3>Adiciona um nova categoria<h3>
+<hr />
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<hr />
+<p>Exemplo de body</p>
+<pre>
+  {
+    "category": | string, min = 3, max = 20, necessário
+  }
+</pre>
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 400 Bad Request</p>
+<pre>
+  {
+    "message": "\"field\" is required" ou mensagem de campo inválido
+  }
+</pre>
+<hr />
+<p>Status: 201 Created</p>
+<pre>
+  {
+    "category": {
+      "category": "Categoria adicionada",
+      "user": "Usuário que cadastrou a categoria",
+      "_id": "Id da categoria"
+    }
+  }
+</pre>
+
+<hr />
+
+<p>
 <h2 id="add-games">POST: /games</h2>
 <h3>Cadastra um novo game</h3>
 <hr />
