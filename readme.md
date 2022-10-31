@@ -11,6 +11,7 @@
       <li><a href="#register">Registrar</a></li>
       <li><a href="#login">Login</a></li>
       <li><a href="#add-category">Adicionar nova categoria</a></li>
+      <li><a href="#get-categories">Listar todas as categorias</a></li>
       <li><a href="#add-games">Adicionar novo jogo</a></li>
       <li><a href="#get-games">Listar todos os jogos</a></li>
       <li><a href="#del-game">Deletar um jogo</a></li>
