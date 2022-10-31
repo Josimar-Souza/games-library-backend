@@ -191,7 +191,60 @@
 
 <hr />
 
-<p>
+<h2 id="get-categories">GET: /category</h2>
+<h3>Lista todas as categorias que o usuário cadastrou</h3>
+<hr />
+<p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
+<p>Exemplo:</p>
+<pre>
+  {
+    "authorization": | token |
+  }
+</pre>
+<hr />
+<p>Exemplos de respostas</p>
+<hr />
+<p>Status: 500 Internal Server Error</p>
+<pre>
+  {
+    "message": "Internal server error"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "Invalid token"
+  }
+</pre>
+<hr />
+<p>Status: 401 Unauthorized</p>
+<pre>
+  {
+    "message": "token not found"
+  }
+</pre>
+<hr />
+<p>Status: 200 Ok</p>
+<pre>
+  {
+    "categories": [
+      {
+        "_id": "Id da categoria",
+        "category": "Categoria cadastrada",
+        "user": "Usuário que cadastrou"
+      },
+      {
+        "_id": "Id da categoria",
+        "category": "Categoria cadastrada",
+        "user": "Usuário que cadastrou"
+      }
+    ]
+  }
+</pre>
+
+<hr />
+
 <h2 id="add-games">POST: /games</h2>
 <h3>Cadastra um novo game</h3>
 <hr />
