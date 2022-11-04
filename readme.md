@@ -272,7 +272,10 @@
     "metacritic": {
       "metascore": | number, necessário |,
       "userscore": | number, necessário |
-    }
+    },
+    "image": | string, url válida, necessário |,
+    "backdrop": | string, url válida, necessário |,
+    "category": | string, min = 3, max = 20, necessário |
   }
 </pre>
 <p>Exemplos de respostas</p>
