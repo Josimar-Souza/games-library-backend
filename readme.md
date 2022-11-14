@@ -372,7 +372,69 @@
 <p>Status: 200 Ok</p>
 <pre>
   {
-    "games": | lista de jogos, (array) |
+    "games": [
+      {
+        "_id": "Id do game 1",
+        "title": "Nome do game 1",
+        "releaseYear": "Data de lançamento do game 1",
+        "sinopse": "Sinopse do game 1",
+        "developer": "Desenvolvedora do game 1",
+        "publisher": "Publicadora do game 1",
+        "platforms": [
+          "Plataformas para qual o game 1 foi lançado",
+        ],
+        "trailerURL": "Url para acessar o trailer do game 1",
+        "metacritc" {
+          "metascore": "Nota do game 1 pelos criticos do metacritic",
+          "userscore": "Nota do game 1 pelos usuários do metacritic",
+        },
+        "user": "Usuário que cadastrou o game 1",
+        "image": "Url da imagem do game 1",
+        "backdrop": "Url da imagem de backdrop do game 1",
+        "category": "Categoria do game 1"
+      }
+      {
+        "_id": "Id do game 2",
+        "title": "Nome do game 2,
+        "releaseYear": "Data de lançamento do game 2",
+        "sinopse": "Sinopse do game 2",
+        "developer": "Desenvolvedora do game 2",
+        "publisher": "Publicadora do game 2",
+        "platforms": [
+          "Plataformas para qual o game 2 foi lançado",
+        ],
+        "trailerURL": "Url para acessar o trailer do game 2",
+        "metacritc" {
+          "metascore": "Nota do game 2 pelos criticos do metacritic",
+          "userscore": "Nota do game 2 pelos usuários do metacritic",
+        },
+        "user": "Usuário que cadastrou o game 2",
+        "image": "Url da imagem do game 2",
+        "backdrop": "Url da imagem de backdrop do game 2",
+        "category": "Categoria do game 2"
+      }
+      {
+        "_id": "Id do game 3",
+        "title": "Nome do game 3,
+        "releaseYear": "Data de lançamento do game 3",
+        "sinopse": "Sinopse do game 3",
+        "developer": "Desenvolvedora do game 3",
+        "publisher": "Publicadora do game 3",
+        "platforms": [
+          "Plataformas para qual o game 3 foi lançado",
+        ],
+        "trailerURL": "Url para acessar o trailer do game 3",
+        "metacritc" {
+          "metascore": "Nota do game 3 pelos criticos do metacritic",
+          "userscore": "Nota do game 3 pelos usuários do metacritic",
+        },
+        "user": "Usuário que cadastrou o game 3",
+        "image": "Url da imagem do game 3",
+        "backdrop": "Url da imagem de backdrop do game 3",
+        "category": "Categoria do game 3"
+      }
+      ...
+    ]
   }
 </pre>
 
