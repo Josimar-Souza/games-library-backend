@@ -312,6 +312,7 @@
 <pre>
   {
     "newGame": {
+      "_id": "Id do game",
       "title": "Nome do game",
       "releaseYear": "Data de lançamento do game",
       "sinopse": "Sinopse do game",
@@ -326,7 +327,9 @@
         "userscore": "Nota do game pelos usuários do metacritic",
       },
       "user": "Usuário que cadastrou o game",
-      "_id": "Id do game"
+      "image": "Url da imagem do game",
+      "backdrop": "Url da imagem de backdrop do game",
+      "category": "Categoria do game"
     }
   }
 </pre>
