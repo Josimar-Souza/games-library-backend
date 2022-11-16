@@ -262,7 +262,7 @@
   {
     "title": | string, min = 3, max = 35, necessário |,
     "releaseYear": | string, no formato dd/mm/aaaa, necessário |,
-    "sinopse": | string, min = 10, max = 100, necessário |,
+    "sinopse": | string, min = 10, max = 1000, necessário |,
     "developer": | string, min = 5, necessário |,
     "publisher": | string, min = 5, necessário |,
     "platforms": [
