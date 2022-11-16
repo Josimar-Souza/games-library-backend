@@ -266,7 +266,7 @@
     "developer": | string, min = 5, necessário |,
     "publisher": | string, min = 5, necessário |,
     "platforms": [
-      | string, min = 5, necessário |
+      | string, min = 3, necessário |
     ]
     "trailerURL": | url válida, necessário|,
     "metacritic": {
