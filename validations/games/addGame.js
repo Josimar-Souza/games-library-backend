@@ -38,7 +38,7 @@ const addGameSchema = joi.object({
   category: joi.string()
     .required()
     .min(3)
-    .max(20),
+    .max(35),
 });
 
 module.exports = (value) => addGameSchema.validate(value);
