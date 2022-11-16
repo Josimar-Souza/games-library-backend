@@ -12,7 +12,7 @@ const addGameSchema = joi.object({
   sinopse: joi.string()
     .min(10)
     .required()
-    .max(100),
+    .max(1000),
   developer: joi.string()
     .required()
     .min(5),
