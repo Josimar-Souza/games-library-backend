@@ -21,7 +21,7 @@ const addGameSchema = joi.object({
     .min(5),
   platforms: joi.array()
     .required()
-    .items(joi.string().min(5)),
+    .items(joi.string().min(3)),
   trailerURL: joi.string()
     .required()
     .uri(),
