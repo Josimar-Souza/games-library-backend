@@ -5,7 +5,7 @@ const gamesService = require('../../service/games');
 const findGameById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { userEmail } = req.user;
+    const { email: userEmail } = req.user;
     const game = await gamesService.findGameById(id, userEmail);
 
     if (game instanceof ErrorCreator) {
