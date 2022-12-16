@@ -9,7 +9,7 @@ const Auth = require('../../middlewares/Auth');
 const gamesRouter = express.Router({ mergeParams: true });
 
 gamesRouter.post('/', Auth, addGame);
-gamesRouter.post('/:id', Auth, updateGameById);
+gamesRouter.patch('/:id', Auth, updateGameById);
 gamesRouter.get('/', Auth, getUserGames);
 gamesRouter.get('/:id', Auth, findGameById);
 gamesRouter.delete('/:id', Auth, deleteGameById);
