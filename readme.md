@@ -489,7 +489,7 @@
 
 <hr />
 
-<h2 id="update-game">POST: /games/:id</h2>
+<h2 id="update-game">PATCH: /games/:id</h2>
 <h3>Atualiza um game pelo seu id</h3>
 <hr />
 <p>Para esse endpoint é necessário enviar um token de acesso nos headers da requisição</p>
