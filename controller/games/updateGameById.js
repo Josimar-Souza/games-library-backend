@@ -13,7 +13,7 @@ const updateGameById = async (req, res, next) => {
       return res.status(updatedGame.status).json({ message: updatedGame.message });
     }
 
-    return res.status(StatusCodes.OK).json({ updatedGame });
+    return res.status(StatusCodes.OK).json({ message: 'Game successfully updated!' });
   } catch (error) {
     next(error);
   }
